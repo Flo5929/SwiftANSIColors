@@ -5,6 +5,7 @@
 // BEGIN
 
 enum ANSIColors: String {
+    case default = "\u{001B}[0;0m"
     case black = "\u{001B}[0;30m"
     case red = "\u{001B}[0;31m"
     case green = "\u{001B}[0;32m"
@@ -16,6 +17,7 @@ enum ANSIColors: String {
     
     func name() -> String {
         switch self {
+        case default: return "Default" 
         case black: return "Black"
         case red: return "Red"
         case green: return "Green"
