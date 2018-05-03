@@ -1,11 +1,10 @@
 // This is aimed at Swift command-line programs launched as scripts that need to do some colored output
 
-
 // ANSIColors: a small "library" to print ANSI colored Swift strings to console
 // BEGIN
 
 enum ANSIColors: String {
-    case default = "\u{001B}[0;0m"
+    case `default` = "\u{001B}[0;0m"
     case black = "\u{001B}[0;30m"
     case red = "\u{001B}[0;31m"
     case green = "\u{001B}[0;32m"
@@ -17,24 +16,24 @@ enum ANSIColors: String {
     
     func name() -> String {
         switch self {
-        case default: return "Default" 
-        case black: return "Black"
-        case red: return "Red"
-        case green: return "Green"
-        case yellow: return "Yellow"
-        case blue: return "Blue"
-        case magenta: return "Magenta"
-        case cyan: return "Cyan"
-        case white: return "White"
+        case .default: return "Default"
+        case .black: return "Black"
+        case .red: return "Red"
+        case .green: return "Green"
+        case .yellow: return "Yellow"
+        case .blue: return "Blue"
+        case .magenta: return "Magenta"
+        case .cyan: return "Cyan"
+        case .white: return "White"
         }
     }
     
     static func all() -> [ANSIColors] {
-        return [.black, .red, .green, .yellow, .blue, .magenta, .cyan, .white]
+        return [.default, .black, .red, .green, .yellow, .blue, .magenta, .cyan, .white]
     }
 }
 
-func + (let left: ANSIColors, let right: String) -> String {
+func + (left: ANSIColors, right: String) -> String {
     return left.rawValue + right
 }
 
@@ -46,5 +45,5 @@ func + (let left: ANSIColors, let right: String) -> String {
 // $ swift MyPlayground.playground/Contents.swift
 
 for c in ANSIColors.all() {
-    println(c + "This is printed in " + c.name())
+    print(c + "This is printed in " + c.name())
 }
