@@ -44,6 +44,6 @@ func + (left: ANSIColors, right: String) -> String {
 // if you've copied this code inside a Playground just do:
 // $ swift MyPlayground.playground/Contents.swift
 
-for c in ANSIColors.all() {
-    print(c + "This is printed in " + c.name())
-}
+//for c in ANSIColors.all() {
+//    print(c + "This is printed in " + c.name())
+//}
